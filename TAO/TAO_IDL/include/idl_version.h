@@ -50,7 +50,7 @@ enum SpecificIdlVersion
  * This is so that BE can control the version without overriding idl_version_
  * directly and making --default-idl-version incorrect.
  */
-const SpecificIdlVersion DEFAULT_DEFAULT_IDL_VERSION = IDL_VERSION_3;
+const SpecificIdlVersion DEFAULT_DEFAULT_IDL_VERSION = IDL_VERSION_4;
 
 /**
  * Class Operations involving SpecificIdlVersion Values
@@ -93,6 +93,11 @@ public:
    * any strings in idlVersionNames.
    */
   void from_string (const char * version);
+
+  /**
+   * Get the value for __TAO_IDL_IDL_VERSION preprocessor macro.
+   */
+  const char * to_macro () const;
 
   /**
    * Compare a IdlVersion to a SpecificIdlVersion or another IdlVersion
